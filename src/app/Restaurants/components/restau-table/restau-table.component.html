@@ -1,0 +1,16 @@
+<br/><br/>
+<table>
+  <tbody>
+  <p appYellow>
+    <tr *ngFor="let i of restaus">
+      <td>{{i.nom}}</td>
+      <td>{{i.adresse}}</td>
+      <td>{{i.noteMoyenne}}</td>
+
+      <a href="detail/{{i}}">Détails</a>
+    </tr>
+  </p>
+
+
+  </tbody>
+</table>

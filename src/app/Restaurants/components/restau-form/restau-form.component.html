@@ -1,0 +1,21 @@
+<form #form="ngForm" (ngSubmit)="submit()">
+  <div>
+    <label for="nom">Nom</label>
+    <input #nomInput="ngModel" type="text" id="nom" name="nom" required minlength="1" maxlength="30" [(ngModel)]="restau.nom">
+    <span *ngIf="nomInput.invalid && nomInput.errors && nomInput.errors.required" style="color: red">Le champs est requis</span>
+    <span *ngIf="nomInput.invalid && nomInput.errors && nomInput.errors.minlength" style="color: red">Le champs est trop court</span>
+    <span *ngIf="nomInput.invalid && nomInput.errors && nomInput.errors.maxlength" style="color: red">Le champs est trop long</span>
+  </div>
+
+  <div>
+    <label for="adresse">Adresse</label>
+    <input #adresseInput="ngModel"type="text" id="adresse" name="adresse" required minlength="5" maxlength="50" [(ngModel)]="restau.adresse">
+    <span *ngIf="adresseInput.invalid && adresseInput.errors && adresseInput.errors.required" style="color: red">Le champs est requis</span>
+    <span *ngIf="adresseInput.invalid && adresseInput.errors && adresseInput.errors.minlength" style="color: red">Le champs est trop court</span>
+    <span *ngIf="adresseInput.invalid && adresseInput.errors && adresseInput.errors.maxlength" style="color: red">Le champs est trop long</span>
+  </div>
+
+  <input type="submit">
+
+<!--  {{restau|json}}-->
+</form>
